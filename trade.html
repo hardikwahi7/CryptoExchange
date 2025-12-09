@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CryptoX - Trade</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">⚡ CryptoX</div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="trade.html" class="active">Trade</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="ticker-bar">
+        <span class="ticker-item">BTC/USD: <span id="tickerBTC">$42,150.00</span></span>
+        <span class="ticker-item">ETH/USD: <span id="tickerETH">$3,245.50</span></span>
+        <span class="ticker-item">24h Volume: <span id="tickerVol">$2.4B</span></span>
+    </div>
+
+    <main class="trade-container">
+        <div class="trade-left">
+            <div class="order-form">
+                <h2>Place Order</h2>
+
+                <div class="btn-group">
+                    <button class="tab-btn active" onclick="setSide('buy')" id="buyTab">BUY</button>
+                    <button class="tab-btn" onclick="setSide('sell')" id="sellTab">SELL</button>
+                </div>
+
+                <div class="form-group">
+                    <label>Order Type</label>
+                    <select id="orderType" onchange="handleTypeChange()">
+                        <option value="limit">Limit</option>
+                        <option value="market">Market</option>
+                    </select>
+                </div>
+
+                <div class="form-group" id="priceGroup">
+                    <label>Price (USD)</label>
+                    <input type="number" id="orderPrice" placeholder="0.00" step="0.01">
+                </div>
+
+                <div class="form-group">
+                    <label>Amount (BTC)</label>
+                    <input type="number" id="orderAmount" placeholder="0.00" step="0.01">
+                </div>
+
+                <button class="submit-btn buy" id="submitBtn" onclick="submitOrder()">BUY BTC</button>
+            </div>
+
+            <div class="recent-trades">
+                <h3>Recent Trades</h3>
+                <div id="tradesList"></div>
+            </div>
+        </div>
+
+        <div class="trade-right">
+            <div class="chart-container">
+                <h3>Price Chart</h3>
+                <canvas id="priceChart" width="600" height="200"></canvas>
+            </div>
+
+            <div class="orderbook">
+                <h3>Order Book</h3>
+                <div class="orderbook-tables">
+                    <div class="asks-section">
+                        <div class="table-header">
+                            <span>Price (USD)</span>
+                            <span>Amount (BTC)</span>
+                        </div>
+                        <div id="asksTable"></div>
+                    </div>
+                    <div class="spread">--- Spread: <span id="spreadVal">$0.00</span> ---</div>
+                    <div class="bids-section">
+                        <div class="table-header">
+                            <span>Price (USD)</span>
+                            <span>Amount (BTC)</span>
+                        </div>
+                        <div id="bidsTable"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+    <script src="trade.js"></script>
+</body>
+
+</html>
