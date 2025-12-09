@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CryptoX - Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">⚡ CryptoX</div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="trade.html">Trade</a></li>
+                <li><a href="portfolio.html" class="active">Portfolio</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="portfolio-container">
+        <div class="portfolio-header">
+            <h1>Your Portfolio</h1>
+            <div class="total-balance">
+                <span class="balance-label">Total Balance</span>
+                <span class="balance-value" id="totalBalance">$0.00</span>
+            </div>
+        </div>
+
+        <div class="portfolio-grid">
+            <div class="balance-section">
+                <h2>Assets</h2>
+                <div id="assetsList"></div>
+            </div>
+
+            <div class="activity-section">
+                <h2>Recent Activity</h2>
+                <div id="activityList"></div>
+            </div>
+        </div>
+
+        <div class="quick-actions">
+            <h2>Quick Actions</h2>
+            <div class="actions-grid">
+                <button class="action-btn" onclick="quickDeposit()">
+                    <span class="action-icon">💰</span>
+                    <span>Deposit</span>
+                </button>
+                <button class="action-btn" onclick="quickWithdraw()">
+                    <span class="action-icon">💸</span>
+                    <span>Withdraw</span>
+                </button>
+                <button class="action-btn" onclick="location.href='trade.html'">
+                    <span class="action-icon">📈</span>
+                    <span>Trade</span>
+                </button>
+                <button class="action-btn" onclick="quickRefresh()">
+                    <span class="action-icon">🔄</span>
+                    <span>Refresh</span>
+                </button>
+            </div>
+        </div>
+    </main>
+
+
+
+    <script src="script.js"></script>
+    <script src="portfolio.js"></script>
+</body>
+
+</html>
